@@ -32,7 +32,7 @@
 """
 
 import re
-import string
+
 
 def detect(source):
     """Detects whether `source` is P.A.C.K.E.R. coded."""
@@ -60,9 +60,9 @@ def unpack(source):
 
 def _filterargs(source):
     """Juice from a source file the four args needed by decoder."""
-    juicers = [ (r"}\('(.*)', *(\d+), *(\d+), *'(.*)'\.split\('\|'\), *(\d+), *(.*)\)\)"),
-                (r"}\('(.*)', *(\d+), *(\d+), *'(.*)'\.split\('\|'\)"),
-              ]
+    juicers = [r"}\('(.*)', *(\d+), *(\d+), *'(.*)'\.split\('\|'\), *(\d+), *(.*)\)\)",
+               r"}\('(.*)', *(\d+), *(\d+), *'(.*)'\.split\('\|'\)",
+               ]
     for juicer in juicers:
         args = re.search(juicer, source, re.DOTALL)
         if args:

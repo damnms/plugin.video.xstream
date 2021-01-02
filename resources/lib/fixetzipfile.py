@@ -1464,7 +1464,7 @@ class PyZipFile(ZipFile):
         archivename = os.path.split(fname)[1]
         if basename:
             archivename = "%s/%s" % (basename, archivename)
-        return (fname, archivename)
+        return fname, archivename
 
 
 def main(args = None):

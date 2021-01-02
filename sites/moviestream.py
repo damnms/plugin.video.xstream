@@ -21,7 +21,7 @@ URL_GENRES_SERIE = 'https://movie-stream.eu/secure/titles?type=series&genre=%s'
 def load():
     logger.info('Load %s' % SITE_NAME)
     params = ParameterHandler()
-    params.setParam('page', (1))
+    params.setParam('page', 1)
     params.setParam('sUrl', URL_FILME)
     cGui().addFolder(cGuiElement('Filme', SITE_IDENTIFIER, 'showEntries'), params)
     params.setParam('sUrl', URL_SERIE)
